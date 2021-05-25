@@ -19,4 +19,4 @@ jobs:
     - name: Run Test Suite
       run: bundle exec rspec spec
     - name: Run Type Stats
-      run: bundle exec steep stats --log-level=fatal | awk -F',' '{ printf "%-28s %-9s %-12s %-14s %-10s\n", $2, $3, $4, $5, $7 }'
+      run: bundle exec steep stats --log-level=fatal | awk -F',' '{ printf "%-40s %-9s %-12s %-14s %-10s\n", $2, $3, $4, $5, $7 }'
