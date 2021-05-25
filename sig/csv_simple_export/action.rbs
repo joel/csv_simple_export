@@ -1,13 +1,17 @@
 module CsvSimpleExport
   class Action
-    attr_reader key: untyped
+    # Parameters
+    type header = String
+    type input = Symbol | Proc
+
+    attr_reader key: header
 
     attr_reader action: untyped
 
     attr_reader block: untyped
 
-    def initialize: (untyped key, ?untyped? action) { () -> untyped } -> untyped
+    def initialize: (header key, ?untyped? action) { () -> String } -> void
 
-    def get_value: (untyped record, untyped host) -> untyped
+    def get_value: (Object record, Object host) -> String
   end
 end
