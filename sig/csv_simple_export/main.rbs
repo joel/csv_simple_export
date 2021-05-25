@@ -1,5 +1,5 @@
 module CsvSimpleExport
   class Main
-    def csv_simple_export: (untyped input) -> untyped
+    def csv_simple_export: (String input) -> String
   end
 end
