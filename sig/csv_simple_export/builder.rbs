@@ -1,0 +1,21 @@
+module CsvSimpleExport
+  class Builder
+    attr_reader collection: untyped
+
+    def initialize: (untyped collection) -> untyped
+
+    def default_options: () -> { headers: ::Array[Symbol], write_headers: ::TrueClass }
+
+    def self.column: (untyped keyname, ?untyped? action) -> untyped
+
+    def self.columns: (*untyped args) -> untyped
+
+    def self.columns_config: () -> untyped
+
+    def build: () -> untyped
+
+    def self.build: (untyped collection) -> untyped
+
+    def columns_config: () -> untyped
+  end
+end

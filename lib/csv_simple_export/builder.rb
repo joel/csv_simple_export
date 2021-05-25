@@ -4,11 +4,10 @@ require "csv"
 
 module CsvSimpleExport
   class Builder
-    attr_reader :collection, :csv_options
+    attr_reader :collection
 
-    def initialize(collection, csv_options = {})
+    def initialize(collection)
       @collection = collection
-      @csv_options = default_options.merge(csv_options)
     end
 
     def default_options
@@ -33,7 +32,8 @@ module CsvSimpleExport
     end
 
     def build
-      CSV.generate(**csv_options) do |csv|
+      CSV.generate do |csv|
+        csv << default_options[:headers]
         collection.each do |record|
           csv << columns_config.values.map do |action|
             action.get_value(record, self)
@@ -42,8 +42,8 @@ module CsvSimpleExport
       end
     end
 
-    def self.build(collection, csv_options = {})
-      new(collection, csv_options).build
+    def self.build(collection)
+      new(collection).build
     end
 
     protected

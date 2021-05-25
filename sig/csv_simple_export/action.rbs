@@ -1,0 +1,13 @@
+module CsvSimpleExport
+  class Action
+    attr_reader key: untyped
+
+    attr_reader action: untyped
+
+    attr_reader block: untyped
+
+    def initialize: (untyped key, ?untyped? action) { () -> untyped } -> untyped
+
+    def get_value: (untyped record, untyped host) -> untyped
+  end
+end
