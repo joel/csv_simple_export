@@ -12,5 +12,9 @@ jobs:
       with:
         ruby-version: 3.0.0
         bundler-cache: true
-    - name: Run the default task
-      run: bundle exec rake
+    - name: Run linter code
+      run: bundle exec rubocop --parallel
+    - name: Run Type Checker
+      run: bundle exec steep check --log-level=fatal
+    - name: Run Test Suite
+      run: bundle exec rspec spec
