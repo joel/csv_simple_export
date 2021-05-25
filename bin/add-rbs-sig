@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# echo "First ARGS: [$1]"
+
+if [[ -n $1 && $1 == 'force' ]]
+then
+  read -p "Are you sure you want to remove Ruby Signatures? [Yy]" -n 1 -r
+  echo    # (optional) move to a new line
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    echo "Removing Signatures..."
+    rm -rfv sig
+  fi
+fi
+
+if [[ -d sig ]]; then
+  echo "Sig Already Generated, please you force option"
+  exit 1
+fi
+
+echo "Generating Signatures..."
+find lib -name \*.rb -print | cut -sd / -f 2- | xargs -I{} bash -c 'export file={}; export target=sig/$file; mkdir -p ${target%/*}; rbs prototype rb lib/$file > sig/${file/rb/rbs}'
+echo "Done!"

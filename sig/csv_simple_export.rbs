@@ -1,0 +1,4 @@
+module CsvSimpleExport
+  class Error < StandardError
+  end
+end
