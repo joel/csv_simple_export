@@ -32,6 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "zeitwerk"
 
   spec.add_development_dependency "rbs"
+  spec.add_development_dependency "steep"
   spec.add_development_dependency "rubocop-performance"
   spec.add_development_dependency "rubocop-rake"
   spec.add_development_dependency "rubocop-rspec"
