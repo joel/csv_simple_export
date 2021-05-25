@@ -32,11 +32,11 @@ Gem::Specification.new do |spec|
   spec.add_dependency "zeitwerk"
 
   spec.add_development_dependency "rbs"
-  spec.add_development_dependency "steep"
-  spec.add_development_dependency "typeprof"
   spec.add_development_dependency "rubocop-performance"
   spec.add_development_dependency "rubocop-rake"
   spec.add_development_dependency "rubocop-rspec"
+  spec.add_development_dependency "steep"
+  spec.add_development_dependency "typeprof"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
